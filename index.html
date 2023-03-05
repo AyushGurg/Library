@@ -8,35 +8,37 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button>Add Book</button>
+    <button data-modal-target="#modal">Add Book</button>
 
-    <div class="modal" id="modal">
-      <div class="modal-header">
-        <div class="modal-title">Book form</div>
-        <button>&times;</button>
+    <form action="">
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <div class="modal-title">Book form</div>
+          <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="book-form">
+            <label for="book">Book: </label>
+            <input required type="text" name="book" id="book" />
+          </div>
+          <div class="author-form">
+            <label for="author">Author: </label>
+            <input required type="text" name="author" class="author" />
+          </div>
+          <div class="pages-form">
+            <label for="pages">No. of Pages: </label>
+            <input required type="number" name="pages" class="pages" />
+          </div>
+          <div class="read-form">
+            <label for="read">Have you read it? </label>
+            <input type="checkbox" name="read" class="read" />
+          </div>
+          <div class="submit-form">
+            <input type="submit" name="submit" class="submit" />
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        <div class="book-form">
-          <label for="book">Book: </label>
-          <input type="text" name="book" id="book" />
-        </div>
-        <div class="author-form">
-          <label for="author">Author: </label>
-          <input type="text" name="author" class="author" />
-        </div>
-        <div class="pages-form">
-          <label for="pages">No. of Pages: </label>
-          <input type="number" name="pages" class="pages" />
-        </div>
-        <div class="read-form">
-          <label for="read">Have you read it? </label>
-          <input type="checkbox" name="read" class="read" />
-        </div>
-        <div class="submit-form">
-          <button class="submit">Submit</button>
-        </div>
-      </div>
-    </div>
+    </form>
 
     <div id="overlay"></div>
     <script src="magic.js"></script>
