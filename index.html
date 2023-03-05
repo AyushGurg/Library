@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button>Add Book</button>
+
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="modal-title">Book form</div>
+        <button>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="book-form">
+          <label for="book">Book: </label>
+          <input type="text" name="book" id="book" />
+        </div>
+        <div class="author-form">
+          <label for="author">Author: </label>
+          <input type="text" name="author" class="author" />
+        </div>
+        <div class="pages-form">
+          <label for="pages">No. of Pages: </label>
+          <input type="number" name="pages" class="pages" />
+        </div>
+        <div class="read-form">
+          <label for="read">Have you read it? </label>
+          <input type="checkbox" name="read" class="read" />
+        </div>
+        <div class="submit-form">
+          <button class="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="overlay"></div>
+    <script src="magic.js"></script>
+  </body>
+</html>
