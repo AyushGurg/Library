@@ -3,11 +3,13 @@ let addBook = document.querySelector(".submit");
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeModalButtons = document.querySelectorAll("[data-close-button]");
 const overlay = document.getElementById("overlay");
-let index = 1;
+const inputForm = document.getElementById("book-form");
+const index = 1;
 
 addBook.addEventListener("click", function (event) {
   event.preventDefault();
   addBookToLibrary();
+  inputForm.reset();
 });
 
 openModalButtons.forEach((button) => {
@@ -85,10 +87,8 @@ function addBookToLibrary() {
   removeBtn.type = "button";
   removeBtn.className = "remove";
   removeBtn.innerHTML = "remove";
-  removeBtn.onclick = deleteThisRow();
+  removeBtn.onclick = function deleteThisRow() {
+    bookTable.deleteRow(row.rowIndex);
+  };
   cell5.appendChild(removeBtn);
-
-  index++;
 }
-
-function deleteThisRow() {}
