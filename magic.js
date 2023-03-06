@@ -4,7 +4,10 @@ const openModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeModalButtons = document.querySelectorAll("[data-close-button]");
 const overlay = document.getElementById("overlay");
 
-addBook.addEventListener("click", addBookToLibrary);
+addBook.addEventListener("click", function (event) {
+  event.preventDefault();
+  addBookToLibrary();
+});
 
 openModalButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -46,9 +49,19 @@ function Book(book, author, pages, read) {
   this.book = book;
   this.author = author;
   this.pages = pages;
-  read = false;
+  this.read = read;
 }
 
+let water;
 function addBookToLibrary() {
-  console.log("w");
+  let bookName = document.querySelector(".book").value;
+  let bookAuthor = document.querySelector(".author").value;
+  let bookPages = document.querySelector(".pages").value;
+  let bookRead = document.querySelector(".read").checked;
+
+  if (bookName != null || bookAuthor != null || bookPages != null) {
+    myLibrary.push(new Book(bookName, bookAuthor, bookPages, bookRead));
+  }
 }
+
+// Now to update the the DOM now.
